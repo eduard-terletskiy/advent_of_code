@@ -1,6 +1,6 @@
-from os import terminal_size
 import re
-from typing import Pattern
+
+
 passports = 'input.txt'
 dict_passport = {}
 list_passport = []
@@ -60,8 +60,9 @@ def checking_condition(x):
         hgt(x['hgt']) and
         hcl(x['hcl']) and
         ecl(x['ecl']) and
-        pid(x['pid'])):
-            return True
+            pid(x['pid'])):
+        return True
+
 
 with open(passports) as file_obj:
     try:
@@ -83,5 +84,5 @@ collections = ["iyr", "byr", "eyr", "hgt", "hcl", "ecl", "pid"]
 for x in list_passport:
     if set(collections).issubset(x):
         # if checking_condition(x): uncomment for part two
-            i += 1    
+        i += 1
 print(i)
